@@ -1,0 +1,19 @@
+#ifndef COD_KEYS_H
+#define COD_KEYS_H
+
+#include <SDL.h>
+
+enum COD_KEY : unsigned int
+{
+    COD_SPACE = SDL_SCANCODE_SPACE,
+    COD_W = SDL_SCANCODE_W,
+    COD_A = SDL_SCANCODE_A,
+    COD_S = SDL_SCANCODE_S,
+    COD_D = SDL_SCANCODE_D,
+    COD_UP = SDL_SCANCODE_UP,
+    COD_DOWN = SDL_SCANCODE_DOWN,
+    COD_LEFT = SDL_SCANCODE_LEFT,
+    COD_RIGHT = SDL_SCANCODE_RIGHT,
+};
+
+#endif
