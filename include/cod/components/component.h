@@ -11,6 +11,7 @@ public:
     Component();
     Component(Context*, Entity*);
 
+    virtual void start();
     virtual void update() = 0;
     virtual void render() = 0;
 

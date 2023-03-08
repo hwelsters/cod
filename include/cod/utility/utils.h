@@ -6,7 +6,7 @@
 namespace Utils
 {
     template <class T, class U>
-    static bool is_same_type(T t, U u)
+    bool is_same_type()
     {
         return std::is_same<T, U>::value;
     }

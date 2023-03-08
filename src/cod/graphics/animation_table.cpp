@@ -1,11 +1,11 @@
-#include "cod/graphics/animator_table.h"
+#include "cod/graphics/animation_table.h"
 
-Animation AnimatorTable::get_animation(int animation_ID)
+Animation AnimationTable::get_animation(int animation_ID)
 {
     return this->animations[animation_ID];
 }
 
-void AnimatorTable::add_animation(int animation_ID, Animation animation)
+void AnimationTable::add_animation(int animation_ID, Animation animation)
 {
     if (this->animations.size() <= animation_ID)
     {
@@ -14,7 +14,7 @@ void AnimatorTable::add_animation(int animation_ID, Animation animation)
     }
 }
 
-void AnimatorTable::add_animation(int animation_ID, SDL_Texture* texture, int num_of_frames, Vector2 source_size, Vector2 source_position, float miliseconds_per_frame)
+void AnimationTable::add_animation(int animation_ID, SDL_Texture* texture, int num_of_frames, Vector2 source_size, Vector2 source_position, float miliseconds_per_frame)
 {
     std::vector<Sprite> sprite_list;
 

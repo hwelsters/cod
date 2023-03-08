@@ -4,7 +4,7 @@
 #include <vector>
 #include "cod/graphics/animation.h"
 
-struct AnimatorTable 
+struct AnimationTable 
 {
 public:
     // This copies the whole ass struct, maybe I should pass a pointer instead?

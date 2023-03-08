@@ -1,7 +1,7 @@
 #ifndef CONTEXT_H
 #define CONTEXT_H
 
-#include "cod/graphics/animator_table.h"
+#include "cod/graphics/animation_table.h"
 #include "cod/graphics/graphics.h"
 #include "cod/input/input.h"
 
@@ -16,7 +16,7 @@ public:
         delete this->input;
     }
 
-    AnimatorTable* animator_table;
+    AnimationTable* animator_table;
     Graphics *graphics;
     Input *input;
 };

@@ -16,7 +16,7 @@ Game::Game(Config config)
 
     // TEST
     this->set_active_scene(new Scene());
-    this->active_scene->add_entity(new Player(this->context));
+    this->active_scene->add_entity(new Player());
 
     this->game_loop();
 }
@@ -28,6 +28,8 @@ Game::~Game()
 
 void Game::game_loop()
 {
+    this->active_scene->init();
+
     while (!this->context->input->is_window_should_close())
     {
         this->context->graphics->clear();
@@ -43,4 +45,5 @@ void Game::game_loop()
 void Game::set_active_scene(Scene* active_scene)
 {
     this->active_scene = active_scene;
+    this->active_scene->set_context(this->context);
 }

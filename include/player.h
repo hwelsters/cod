@@ -6,8 +6,7 @@
 class Player : public Entity
 {
 public:
-    Player();
-    Player(Context*);
+    void init() override;
 };
 
 #endif

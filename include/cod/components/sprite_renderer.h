@@ -15,6 +15,8 @@ public:
     void render();
     void update();
 
+    void sanity_check();
+
 private:
     Sprite active_sprite;
 };

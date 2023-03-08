@@ -6,3 +6,5 @@ Component::Component() {}
 
 void Component::set_context(Context *context) { this->context = context; }
 void Component::set_entity(Entity *entity) { this->entity = entity; }
+
+void Component::start() {}

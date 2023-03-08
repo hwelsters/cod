@@ -12,3 +12,8 @@ void SpriteRenderer::render()
 }
 
 void SpriteRenderer::update() {}
+
+void SpriteRenderer::sanity_check() 
+{
+    printf("CHECKED SANITY\n");
+}
