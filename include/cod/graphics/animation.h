@@ -10,6 +10,6 @@ struct Animation
 public:
     float miliseconds_per_frame;
     std::vector<Sprite> animation;
-}
+};
 
 #endif

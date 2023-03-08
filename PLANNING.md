@@ -22,3 +22,11 @@ BoxCollider2D
 Rigidbody2D
 
 FUCK EFFICIENCY! I am making 2D games. Make first, optimize later!
+
+Animation will be stored in animation tables
+Animators will get animations from Animation Table
+Animtion Table will store all animations
+
+Scene will contain all entities/tiles. Will run through the whole list
+
+Camera

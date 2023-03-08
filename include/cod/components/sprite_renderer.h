@@ -4,14 +4,16 @@
 #include "cod/graphics/sprite.h"
 #include "cod/components/component.h"
 
-class SpriteRenderer : Component
+struct Context;
+
+class SpriteRenderer : public Component
 {
 public:
     SpriteRenderer();
     SpriteRenderer(Sprite);
 
-    void render() override;
-    void update() override;
+    void render();
+    void update();
 
 private:
     Sprite active_sprite;

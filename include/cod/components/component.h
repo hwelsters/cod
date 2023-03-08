@@ -3,18 +3,25 @@
 #define COMPONENT_H
 
 struct Context;
+class Entity;
 
 class Component
 {
 public:
     Component();
-    Component(Context*);
+    Component(Context*, Entity*);
 
     virtual void update() = 0;
     virtual void render() = 0;
 
-// protected:
-//     Context* context;
+    friend Entity;
+
+protected:
+    void set_context(Context*);
+    void set_entity(Entity*);
+    
+    Context* context;
+    Entity* entity;
 };
 
 #endif

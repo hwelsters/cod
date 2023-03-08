@@ -3,10 +3,13 @@
 
 #include "cod/components/component.h"
 
-class Animator : Component 
+class Animator : public Component 
 {
 public: 
     Animator();
+
+    void render() override;
+    void update() override;
 };
 
 #endif

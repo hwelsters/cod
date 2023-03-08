@@ -9,6 +9,7 @@
 
 class Input;
 class Graphics;
+class Scene;
 
 class Game
 {
@@ -22,8 +23,12 @@ public:
     void process_input();
     void update();
     void render();
+
+    void set_active_scene(Scene*);
 private:
-    Context context;
+    Context* context;
+    Scene* active_scene;
+
     std::string name;
 };
 
