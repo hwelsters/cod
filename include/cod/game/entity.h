@@ -25,12 +25,15 @@ public:
 
     void add_component(Component *);
 
-    template <class T>
+    // SLOW. VERY SLOW. BUT IDEALLY, I'LL ONLY DO THIS ONCE OR TWICE
+    template <typename T>
     T *get_component()
     {
         for (Component *component : components)
-            if (Utils::is_same_type<decltype(component), T>())
+            if (dynamic_cast<T*>(component))
                 return static_cast<T*>(component);
+
+        printf("get_component :: Couldn't find component!\n");
         return nullptr;
     }
 

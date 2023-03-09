@@ -18,6 +18,12 @@ void Scene::init()
     std::for_each(this->entity_list.begin(), this->entity_list.end(), entity_init);
 }
 
+void Scene::start()
+{
+    auto entity_start = [](Entity *entity) { entity->start(); };
+    std::for_each(this->entity_list.begin(), this->entity_list.end(), entity_start);
+}
+
 void Scene::update()
 {
     auto entity_update = [](Entity *entity) { entity->update(); };

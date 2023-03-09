@@ -1,11 +1,12 @@
 #include "cod/graphics/animation_table.h"
 
-Animation AnimationTable::get_animation(int animation_ID)
+// Maybe I could use pointers instead. Maybe I will benchmarks and then make decisions later down the line
+Animation* AnimationTable::get_animation(int animation_ID)
 {
     return this->animations[animation_ID];
 }
 
-void AnimationTable::add_animation(int animation_ID, Animation animation)
+void AnimationTable::add_animation(int animation_ID, Animation* animation)
 {
     if (this->animations.size() <= animation_ID)
     {
@@ -14,7 +15,7 @@ void AnimationTable::add_animation(int animation_ID, Animation animation)
     }
 }
 
-void AnimationTable::add_animation(int animation_ID, SDL_Texture* texture, int num_of_frames, Vector2 source_size, Vector2 source_position, float miliseconds_per_frame)
+void AnimationTable::add_animation(int animation_ID, SDL_Texture* texture, int num_of_frames, Vector2 source_size, Vector2 source_position, float ticks_per_frame)
 {
     std::vector<Sprite> sprite_list;
 
@@ -31,8 +32,8 @@ void AnimationTable::add_animation(int animation_ID, SDL_Texture* texture, int n
         sprite_list.push_back(sprite);
     }
 
-    Animation animation;
-    animation.miliseconds_per_frame = miliseconds_per_frame;
-    animation.animation = std::move(sprite_list);
+    Animation* animation;
+    animation->ticks_per_frame = ticks_per_frame;
+    animation->animation = sprite_list;
     this->add_animation(animation_ID, animation);
 }

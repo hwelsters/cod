@@ -29,6 +29,7 @@ private:
     Context* context;
     Scene* active_scene;
 
+    int max_fps;
     std::string name;
 };
 

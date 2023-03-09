@@ -13,6 +13,7 @@ public:
     void add_entity(Entity*);
 
     void init();
+    void start();
     void update();
     void render();
 

@@ -4,6 +4,7 @@
 #include "cod/graphics/animation_table.h"
 #include "cod/graphics/graphics.h"
 #include "cod/input/input.h"
+#include "cod/time/timer.h"
 
 // Mini singletons (kinda?) except I get to control exactly what has access to it.
 struct Context
@@ -16,9 +17,10 @@ public:
         delete this->input;
     }
 
-    AnimationTable* animator_table;
+    AnimationTable* animation_table;
     Graphics *graphics;
     Input *input;
+    Timer* timer;
 };
 
 #endif

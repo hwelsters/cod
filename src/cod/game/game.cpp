@@ -13,11 +13,12 @@ Game::Game(Config config)
     this->context = new Context();
     this->context->graphics = new Graphics(config);
     this->context->input = new Input();
+    this->context->timer = new Timer();
 
     // TEST
     this->set_active_scene(new Scene());
     this->active_scene->add_entity(new Player());
-
+    this->max_fps = config.max_fps;
     this->game_loop();
 }
 
@@ -29,7 +30,9 @@ Game::~Game()
 void Game::game_loop()
 {
     this->active_scene->init();
+    this->active_scene->start();
 
+    this->context->timer->start();
     while (!this->context->input->is_window_should_close())
     {
         this->context->graphics->clear();
@@ -39,6 +42,13 @@ void Game::game_loop()
 
         this->active_scene->render();
         this->context->graphics->render();
+
+        int frame_ticks = this->context->timer->get_ticks();
+        this->context->timer->start();
+        if (frame_ticks < this->max_fps)
+        {
+            SDL_Delay(this->max_fps - frame_ticks);
+        }
     }
 }
 

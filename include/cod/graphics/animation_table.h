@@ -8,12 +8,12 @@ struct AnimationTable
 {
 public:
     // This copies the whole ass struct, maybe I should pass a pointer instead?
-    Animation get_animation(int);
+    Animation* get_animation(int);
 
-    void add_animation(int, Animation);
+    void add_animation(int, Animation*);
     void add_animation(int, SDL_Texture*, int, Vector2, Vector2, float);
 private:
-    std::vector<Animation> animations;
+    std::vector<Animation*> animations;
 };
 
 #endif

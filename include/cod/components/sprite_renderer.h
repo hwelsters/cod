@@ -14,6 +14,7 @@ public:
 
     void render();
     void update();
+    void set_sprite(Sprite);
 
     void sanity_check();
 

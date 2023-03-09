@@ -15,5 +15,11 @@ void SpriteRenderer::update() {}
 
 void SpriteRenderer::sanity_check() 
 {
+    printf("%d %d :: %d %d", this->active_sprite.source_position.x, this->active_sprite.source_position.y, this->active_sprite.source_size.x, this->active_sprite.source_size.y);
     printf("CHECKED SANITY\n");
+}
+
+void SpriteRenderer::set_sprite(Sprite sprite)
+{
+    this->active_sprite = sprite;
 }

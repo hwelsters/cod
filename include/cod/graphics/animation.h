@@ -8,7 +8,7 @@
 struct Animation
 {
 public:
-    float miliseconds_per_frame;
+    float ticks_per_frame;
     std::vector<Sprite> animation;
 };
 
