@@ -10,6 +10,7 @@ class Scene
 {
 public:
     Scene();
+    ~Scene();
     void add_entity(Entity*);
 
     void init();

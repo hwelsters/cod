@@ -11,16 +11,13 @@ Animator::Animator()
 void Animator::start()
 {
     this->sprite_renderer = this->entity->get_component<SpriteRenderer>();
-    if (!this->is_sprite_renderer_exist())
-        return;
+    if (!this->is_sprite_renderer_exist()) return;
 }
 
 void Animator::render()
 {
-    if (!this->is_sprite_renderer_exist())
-        return;
-    if (this->is_playing_animation)
-        return;
+    if (!this->is_sprite_renderer_exist()) return;
+    if (this->is_playing_animation) return;
 }
 
 void Animator::update()
@@ -28,15 +25,11 @@ void Animator::update()
     if (!this->is_sprite_renderer_exist()) return;
     if (!this->is_playing_animation) return;
 
-    // printf("UPDATE\n");
     this->time_elapsed += this->context->timer->get_ticks();
     if (this->time_elapsed >= this->animation.ticks_per_frame)
     {
         this->frame_index++;
         this->time_elapsed -= this->animation.ticks_per_frame;
-
-        // printf("FRAME_INDEX: %d ", this->frame_index);
-        // printf("SIZE: %d\n", this->animation.animation.size());
 
         if (this->play_once) this->frame_index = std::min(this->frame_index, static_cast<int>(this->animation.animation.size() - 1));
         else this->frame_index = this->frame_index % this->animation.animation.size();
@@ -55,7 +48,6 @@ void Animator::play_animation(int animation_ID, bool play_once)
 // Not a pure function. Could be and should be but I dunno
 bool Animator::is_sprite_renderer_exist()
 {
-    if (this->sprite_renderer == nullptr)
-        printf("Animator will not work without a SpriteRenderer\n");
+    if (this->sprite_renderer == nullptr) printf("Animator will not work without a SpriteRenderer\n");
     return this->sprite_renderer != nullptr;
 }

@@ -10,21 +10,17 @@ Animation AnimationTable::get_animation(int animation_ID)
 
 void AnimationTable::add_animation(int animation_ID, Animation animation)
 {
-    printf("HERE 2\n");
     this->animations[animation_ID] = animation;
-    printf("HERE 3\n");
 }
 
 void AnimationTable::add_animation(int animation_ID, SDL_Texture* texture, int num_of_frames, Vector2 source_size, Vector2 source_position, float ticks_per_frame)
 {
-    printf("HERE 1\n");
     std::vector<Sprite> sprite_list;
     
     Sprite sprite;
     sprite.texture = texture;
     sprite.source_size = source_size;
 
-    printf("HERE 1\n");
     for (int i = 0; i < num_of_frames; i++)
     {
         Vector2 new_source_position = Vector2(source_position.x + source_size.x * i, source_position.y);
@@ -33,10 +29,8 @@ void AnimationTable::add_animation(int animation_ID, SDL_Texture* texture, int n
         sprite_list.push_back(sprite);
     }
 
-    printf("HERE 1\n");
     Animation animation;
     animation.ticks_per_frame = ticks_per_frame;
     animation.animation = sprite_list;
     this->add_animation(animation_ID, animation);
-    printf("HERE 1\n");
 }
