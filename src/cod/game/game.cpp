@@ -14,6 +14,7 @@ Game::Game(Config config)
     this->context->graphics = new Graphics(config);
     this->context->input = new Input();
     this->context->timer = new Timer();
+    this->context->animation_table = new AnimationTable();
 
     // TEST
     this->set_active_scene(new Scene());
@@ -45,9 +46,10 @@ void Game::game_loop()
 
         int frame_ticks = this->context->timer->get_ticks();
         this->context->timer->start();
+        
         if (frame_ticks < this->max_fps)
         {
-            SDL_Delay(this->max_fps - frame_ticks);
+            SDL_Delay(std::max(this->max_fps - frame_ticks, 0));
         }
     }
 }

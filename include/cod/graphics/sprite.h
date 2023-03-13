@@ -8,9 +8,9 @@
 struct Sprite
 {
 public:
+    SDL_Texture* texture;
     Vector2 source_size;
     Vector2 source_position;
-    SDL_Texture* texture;
 };
 
 #endif

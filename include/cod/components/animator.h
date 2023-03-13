@@ -18,12 +18,13 @@ private:
     bool is_sprite_renderer_exist();
     
     bool play_once;
+    bool is_playing_animation;
 
     SpriteRenderer* sprite_renderer;
 
     float time_elapsed;
     int frame_index;
-    Animation* animation;
+    Animation animation;
 };
 
 #endif

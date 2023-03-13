@@ -14,14 +14,15 @@ void Player::init()
         7,
         Vector2(32, 32),
         Vector2(0, 0),
-        60);
-    Animator *animator = new Animator();
-
-    animator->play_animation(0, true);
-    this->add_component(animator);
+        100);
 
     SpriteRenderer *sprite_renderer = new SpriteRenderer(player_sprite);
     this->add_component(sprite_renderer);
+
+    Animator *animator = new Animator();
+    this->add_component(animator);
+
+    animator->play_animation(0, false);
 
     this->position = Vector2(50, 50);
 }
